@@ -14,7 +14,7 @@ app.use(cors({
 
 const mysqlConnection = require("./database");
 
-app.get('/database', (req, res) => {
+app.get('/', (req, res) => {
     mysqlConnection.query(
         "SELECT * FROM cafes;",
         (err, results, fields) => {
