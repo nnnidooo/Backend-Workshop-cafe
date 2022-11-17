@@ -15,7 +15,6 @@ app.use(cors({
 
 // ========== READ: read all cafes from database ========== //
 const mysqlConnection = require("./database");
-console.log(mysqlConnection)
 
 app.get("/cafes", (req, res) => {
     const query = "SELECT * FROM cafe_database.cafes;";
@@ -95,10 +94,27 @@ app.get("/favorites", (req, res) => {
     )
 });
 
-app.post('/user/create', (req, res) => {
-    const userName = req.body.name;
-    console.log(userName)
-    res.sendStatus(200);
+// ========== POST: create new data to database ========== //
+app.post('/users/create', (req, res) => {
+    const userId = req.body.user_id;
+    const userName = req.body.user_name;
+    const userAge = req.body.user_age;
+    const userSex = req.body.user_sex;
+    console.log(userId, userName, userAge, userSex)
+
+    const query = "INSERT INTO users (user_id, user_name, user_age, user_sex) VALUES(?,?,?,?);";
+    mysqlConnection.query(
+        query,
+        [userId,userName,userAge,userSex],
+        (err, results, fields) => {
+            if (!err) {
+                res.sendStatus(200);
+            } else {
+                console.log(err);
+            }
+        }
+    )
+
 });
 
 server.listen(3000,(port) => {
