@@ -1,24 +1,26 @@
-//importing the mysql2 library
+// Importing the mysql2 library
 const mysql = require("mysql2");
-
-console.log(process.env['HOST']);
+require('dotenv').config();
+console.log(process.env.host);
 
 // 1. Creating the connection
 const mysqlConnection = mysql.createConnection({
-    host: process.env['HOST'],
-    port: process.env["PORT"],
-    user: process.env["USER"],
-    database: process.env["DATABASE"],
-    password: process.env["PASSWORD"],
+    host: process.env.host,
+    port: process.env.port,
+    user: process.env.user,
+    database: process.env.database,
+    password: process.env.password,
     multipleStatements: true,
 });
 
-//2. Connecting to a database. Handling succes and error cases.
-mysqlConnection.connect((err)=>{
-    if (!err){
-        console.log('Connected');
+// 2. Connecting to the database. Handling success and error cases
+mysqlConnection.connect((err) => {
+    if (!err) {
+        console.log("Connected");
     } else {
         console.log(err);
-        console.log('Connection failed')
+        console.log("Connection Failed");
     }
 });
+
+module.exports = mysqlConnection;
