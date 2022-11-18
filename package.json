@@ -27,7 +27,8 @@
     "mysql2": "^2.3.3",
     "path": "^0.12.7",
     "process": "^0.11.10",
-    "sudo": "^1.0.3"
+    "sudo": "^1.0.3",
+    "yarn": "^1.22.19"
   },
   "description": "",
   "packageManager": "yarn@3.2.3"
