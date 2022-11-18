@@ -11,7 +11,7 @@ const mysqlConnection = mysql.createConnection({
     host: process.env.HOST,
     port: 3306,
     user: process.env.MYSQLUSER,
-    database: process.env.DATABASE,
+    database: "cafe_db",
     password: process.env.PASSWORD,
     multipleStatements: true,
     ssl: {
