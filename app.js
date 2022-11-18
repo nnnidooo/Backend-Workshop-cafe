@@ -16,6 +16,10 @@ app.use(cors({
 // ========== READ: read all cafes from database ========== //
 const mysqlConnection = require("./database");
 
+app.get("/", (req, res) => {
+   res.send("Hey");
+});
+
 app.get("/cafes", (req, res) => {
     const query = "SELECT * FROM cafe_database.cafes;";
     mysqlConnection.query(
