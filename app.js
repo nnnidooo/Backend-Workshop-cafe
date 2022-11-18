@@ -21,7 +21,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/cafes", (req, res) => {
-    const query = "SELECT * FROM cafe_database.cafes;";
+    const query = "SELECT * FROM cafe_db.cafes;";
     mysqlConnection.query(
         query,
         (err, results, fields) => {
@@ -36,7 +36,7 @@ app.get("/cafes", (req, res) => {
 
 // ========== READ: read every cafes' id from database ========== //
 app.get("/cafes/:id", (req, res) => {
-    const query = "SELECT * FROM cafe_database.cafes WHERE cafe_id = ?;";
+    const query = "SELECT * FROM cafe_db.cafes WHERE cafe_id = ?;";
     const id = req.params.id;
     mysqlConnection.query(
         query,
@@ -53,7 +53,7 @@ app.get("/cafes/:id", (req, res) => {
 
 // ========== READ: read all users from database ========== //
 app.get("/users", (req, res) => {
-    const query = "SELECT * FROM cafe_database.users;";
+    const query = "SELECT * FROM cafe_db.users;";
     mysqlConnection.query(
         query,
         (err, results, fields) => {
@@ -68,7 +68,7 @@ app.get("/users", (req, res) => {
 
 // ========== READ: read every users id from database ========== //
 app.get("/users/:id", (req, res) => {
-    const query = "SELECT * FROM cafe_database.users WHERE user_id = ?;";
+    const query = "SELECT * FROM cafe_db.users WHERE user_id = ?;";
     const id = req.params.id;
     mysqlConnection.query(
         query,
@@ -85,7 +85,7 @@ app.get("/users/:id", (req, res) => {
 
 // ========== READ: read all favorites from database ========== //
 app.get("/favorites", (req, res) => {
-    const query = "SELECT * FROM cafe_database.favorites;";
+    const query = "SELECT * FROM cafe_db.favorites;";
     mysqlConnection.query(
         query,
         (err, results, fields) => {
