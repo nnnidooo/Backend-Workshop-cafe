@@ -114,7 +114,6 @@ app.post('/users/create', (req, res) => {
             }
         }
     )
-
 });
 
 server.listen(3000,(port) => {
