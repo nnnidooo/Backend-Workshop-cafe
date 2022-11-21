@@ -82,6 +82,7 @@ app.get("/users/:id", (req, res) => {
             }
         }
     )
+
 });
 
 // ========== READ: read all favorites from database ========== //

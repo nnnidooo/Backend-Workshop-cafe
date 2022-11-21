@@ -31,5 +31,6 @@
     "yarn": "^1.22.19"
   },
   "description": "",
-  "packageManager": "yarn@3.2.3"
+  "packageManager": "yarn@3.2.3",
+
 }
